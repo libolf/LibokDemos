@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.libo.libokdemos">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name=".MainActivity"
+            android:label="Main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".BasisActivity"
+            android:label="Basis/Activity/BasisActivity"
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="leedemos" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ServiceActivity"
+            android:label="Basis/Activity/ServiceActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="leedemos" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ContentProviderActivity"
+            android:label="Basis/Activity/ContentProviderActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="leedemos" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".BroadcastReceiverActivity"
+            android:label="Basis/Activity/BroadcaseReceiverActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="leedemos" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".CustomActivity"
+            android:label="Custom/CustomView/Loading1"
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="leedemos" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
