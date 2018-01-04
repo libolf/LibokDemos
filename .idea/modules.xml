@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/LibokDemos.iml" filepath="$PROJECT_DIR$/LibokDemos.iml" />
-      <module fileurl="file://D:\AndroidStudioWorkSpace\LibokDemos\LibokDemos.iml" filepath="D:\AndroidStudioWorkSpace\LibokDemos\LibokDemos.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\AndroidStudioWorkSpace\LibokDemos\app\app.iml" filepath="D:\AndroidStudioWorkSpace\LibokDemos\app\app.iml" />
     </modules>
   </component>
 </project>
