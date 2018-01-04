@@ -19,9 +19,8 @@
                 <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".BasisActivity"
+            android:name=".Basis.BasisActivity"
             android:label="Basis/Activity/BasisActivity"
             android:parentActivityName=".MainActivity">
             <intent-filter>
@@ -31,9 +30,8 @@
                 <category android:name="leedemos" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".ServiceActivity"
+            android:name=".Basis.ServiceActivity"
             android:label="Basis/Activity/ServiceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,9 +40,8 @@
                 <category android:name="leedemos" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".ContentProviderActivity"
+            android:name=".Basis.ContentProviderActivity"
             android:label="Basis/Activity/ContentProviderActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -53,9 +50,8 @@
                 <category android:name="leedemos" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".BroadcastReceiverActivity"
+            android:name=".Basis.BroadcastReceiverActivity"
             android:label="Basis/Activity/BroadcaseReceiverActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -64,9 +60,8 @@
                 <category android:name="leedemos" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".CustomActivity"
+            android:name=".Custom.CustomActivity"
             android:label="Custom/CustomView/Loading1"
             android:parentActivityName=".MainActivity">
             <intent-filter>
@@ -76,6 +71,7 @@
                 <category android:name="leedemos" />
             </intent-filter>
         </activity>
+        <activity android:name=".DesignPattern.DesignPatternActivity"></activity>
     </application>
 
 </manifest>

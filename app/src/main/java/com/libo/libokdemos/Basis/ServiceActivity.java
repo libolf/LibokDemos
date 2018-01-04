@@ -1,13 +1,15 @@
-package com.libo.libokdemos;
+package com.libo.libokdemos.Basis;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-public class BasisActivity extends AppCompatActivity {
+import com.libo.libokdemos.R;
+
+public class ServiceActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_basis);
+        setContentView(R.layout.activity_service);
     }
 }
