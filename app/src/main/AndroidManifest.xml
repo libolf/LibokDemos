@@ -71,7 +71,8 @@
                 <category android:name="leedemos" />
             </intent-filter>
         </activity>
-        <activity android:name=".DesignPattern.DesignPatternActivity"></activity>
+        <activity android:name=".DesignPattern.DesignPatternActivity" />
+        <activity android:name=".Basis.Basis2Activity"></activity>
     </application>
 
 </manifest>
