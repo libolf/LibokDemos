@@ -14,6 +14,7 @@ public class BasisActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basis);
+        L.d(TAG, "onCreate");
     }
 
     @Override
@@ -44,6 +45,12 @@ public class BasisActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         L.d(TAG, "onPause");
+    }
+
+    @Override
+    public void onContentChanged() {
+        super.onContentChanged();
+        L.d(TAG, "onContentChanged");
     }
 
     @Override

@@ -21,7 +21,7 @@
         </activity>
         <activity
             android:name=".Basis.BasisActivity"
-            android:label="Basis/Activity/BasisActivity"
+            android:label="123"
             android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
