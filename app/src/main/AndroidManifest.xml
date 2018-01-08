@@ -88,7 +88,8 @@
                 <category android:name="leedemos" />
             </intent-filter>
         </activity>
-        <activity android:name=".Basis.ScrollChangeActivity">
+        <activity android:name=".Basis.ScrollChangeActivity"
+            android:theme="@style/TransTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
