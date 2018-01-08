@@ -88,6 +88,14 @@
                 <category android:name="leedemos" />
             </intent-filter>
         </activity>
+        <activity android:name=".Basis.ScrollChangeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="leedemos" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
