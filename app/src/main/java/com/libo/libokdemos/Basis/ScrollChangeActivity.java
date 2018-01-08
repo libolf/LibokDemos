@@ -11,7 +11,8 @@ import com.libo.libokdemos.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-// TODO: 2018-01-08 自定义Behavior http://blog.csdn.net/tabolt/article/details/51821933
+// TODO: 2018-01-08 自定义Behavior http://blog.csdn.net/tabolt/article/details/51821933    BottomSheetBehavior
+//  http://www.ymapk.com/thread-22-1-1.html
 public class ScrollChangeActivity extends AppCompatActivity {
 
     @BindView(R.id.scroll_tool)
