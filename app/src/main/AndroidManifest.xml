@@ -71,8 +71,23 @@
                 <category android:name="leedemos" />
             </intent-filter>
         </activity>
-        <activity android:name=".DesignPattern.DesignPatternActivity" />
-        <activity android:name=".Basis.Basis2Activity"></activity>
+        <activity android:name=".Basis.Basis2Activity" />
+
+        <service
+            android:name=".Basis.MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".Basis.MaterialDesignActivity"
+            android:label="MaterialDesign">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="leedemos" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
