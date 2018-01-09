@@ -6,19 +6,22 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher_round"/>
+        android:scaleType="centerCrop"
+        android:src="@drawable/timg" />
 
     <TextView
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="peater"/>
+        android:layout_centerHorizontal="true"
+        android:text="peater" />
 
     <TextView
         android:id="@+id/usermail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/username"
-        android:text="123@qq.com"/>
+        android:layout_centerHorizontal="true"
+        android:text="123@qq.com" />
 </RelativeLayout>

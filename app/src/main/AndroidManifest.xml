@@ -80,7 +80,8 @@
 
         <activity
             android:name=".Basis.MaterialDesignActivity"
-            android:label="MaterialDesign">
+            android:label="MaterialDesign"
+            android:theme="@style/TransTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -88,8 +89,18 @@
                 <category android:name="leedemos" />
             </intent-filter>
         </activity>
-        <activity android:name=".Basis.ScrollChangeActivity"
-            android:theme="@style/TransTheme">
+        <activity
+            android:name=".Basis.ScrollChangeActivity"
+            android:parentActivityName=".Basis.MaterialDesignActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="leedemos" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MVP.View.MVPActivity"
+            android:label="mvp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

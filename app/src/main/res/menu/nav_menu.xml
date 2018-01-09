@@ -23,6 +23,36 @@
             android:id="@+id/nav_task"
             android:icon="@mipmap/ic_task"
             android:title="Task" />
+        <item
+            android:icon="@mipmap/ic_call"
+            android:title="Call" />
+        <item
+            android:icon="@mipmap/ic_friends"
+            android:title="Friends" />
+        <item
+            android:icon="@mipmap/ic_location"
+            android:title="Location" />
+        <item
+            android:icon="@mipmap/ic_mail"
+            android:title="Mail" />
+        <item
+            android:icon="@mipmap/ic_task"
+            android:title="Task" />
+        <item
+            android:icon="@mipmap/ic_call"
+            android:title="Call" />
+        <item
+            android:icon="@mipmap/ic_friends"
+            android:title="Friends" />
+        <item
+            android:icon="@mipmap/ic_location"
+            android:title="Location" />
+        <item
+            android:icon="@mipmap/ic_mail"
+            android:title="Mail" />
+        <item
+            android:icon="@mipmap/ic_task"
+            android:title="Task" />
 
     </group>
 </menu>
