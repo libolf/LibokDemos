@@ -8,9 +8,11 @@ import android.support.v7.widget.RecyclerView;
 import com.libo.libokdemos.MVP.Presenter.MyContact;
 import com.libo.libokdemos.MVP.Presenter.ViewPresenter;
 import com.libo.libokdemos.R;
+import com.libo.libokdemos.Utils.RetrofitUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Retrofit;
 
 public class MVPActivity extends AppCompatActivity implements MyContact.ImplView {
 
@@ -18,6 +20,7 @@ public class MVPActivity extends AppCompatActivity implements MyContact.ImplView
     RecyclerView mRecyclerView;
 
     private ViewPresenter mPresenter;
+    private Retrofit mRetrofit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,8 @@ public class MVPActivity extends AppCompatActivity implements MyContact.ImplView
 
         mPresenter = new ViewPresenter(this);
         mPresenter.attachView(this);
+        mRetrofit = RetrofitUtils.getInstance("http://www.baidu.com").getRetrofit();
+
     }
 
 

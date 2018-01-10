@@ -1,6 +1,10 @@
 package com.libo.libokdemos.Utils;
 
+import android.util.Log;
+
+import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.libo.libokdemos.MVP.CustomGsonConverterFactory;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -27,15 +31,19 @@ public class RetrofitUtils {
                 L.e(TAG, "okhttp log==== " + message);
             }
         });
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
         sOkHttpClient = new OkHttpClient.Builder()
                 .addInterceptor(interceptor)
                 .build();
         sRetrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .client(sOkHttpClient)
-                .addConverterFactory(GsonConverterFactory.create(new GsonBuilder().create()))
+                .addConverterFactory(CustomGsonConverterFactory.create(gson))   //自定义GsonConverterFactory，防止json出错https://www.jianshu.com/p/5b8b1062866b
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
+        Log.d(TAG, "RetrofitUtils: " + baseUrl);
     }
 
     public static RetrofitUtils getInstance(String baseUrl) {
@@ -49,7 +57,7 @@ public class RetrofitUtils {
         return sRetrofitUtils;
     }
 
-    public static Retrofit getRetrofit() {
+    public Retrofit getRetrofit() {
         if (sRetrofit == null) {
             throw new NullPointerException("先getInstance后再获取Retrofit");
         }

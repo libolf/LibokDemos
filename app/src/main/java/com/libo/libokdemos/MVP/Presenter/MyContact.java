@@ -1,5 +1,6 @@
 package com.libo.libokdemos.MVP.Presenter;
 
+import com.libo.libokdemos.MVP.Model.DataCallback;
 import com.libo.libokdemos.MVP.View.StringRecyclerAdapter;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public interface MyContact {
     }
 
     interface ImplModel {
-        List<String> getDatas();
+        List<String> getDatas(DataCallback dataCallback);
     }
 
     interface ImplPresenter {
