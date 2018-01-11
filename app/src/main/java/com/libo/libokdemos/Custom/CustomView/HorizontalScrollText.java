@@ -8,23 +8,24 @@ import android.view.MotionEvent;
 import android.view.View;
 
 /**
- * Created by libok on 2018-01-09.
+ * 左右滑动TextView
+ * Created by libok on 2018-01-11.
  */
 
-public class IndexView extends View {
+public class HorizontalScrollText extends View {
 
     private int mWidth;
     private int mHeight;
 
-    public IndexView(Context context) {
+    public HorizontalScrollText(Context context) {
         this(context, null);
     }
 
-    public IndexView(Context context, @Nullable AttributeSet attrs) {
+    public HorizontalScrollText(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public IndexView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public HorizontalScrollText(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

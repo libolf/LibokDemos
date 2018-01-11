@@ -8,23 +8,24 @@ import android.view.MotionEvent;
 import android.view.View;
 
 /**
- * Created by libok on 2018-01-09.
+ * 加载动画
+ * Created by libok on 2018-01-11.
  */
 
-public class IndexView extends View {
+public class LoadingView extends View {
 
     private int mWidth;
     private int mHeight;
 
-    public IndexView(Context context) {
+    public LoadingView(Context context) {
         this(context, null);
     }
 
-    public IndexView(Context context, @Nullable AttributeSet attrs) {
+    public LoadingView(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public IndexView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public LoadingView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

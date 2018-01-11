@@ -6,25 +6,27 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.GridView;
 
 /**
- * Created by libok on 2018-01-09.
+ * 自定义GridView选择样式
+ * Created by libok on 2018-01-11.
  */
 
-public class IndexView extends View {
+public class CustomGridView extends GridView {
 
     private int mWidth;
     private int mHeight;
 
-    public IndexView(Context context) {
+    public CustomGridView(Context context) {
         this(context, null);
     }
 
-    public IndexView(Context context, @Nullable AttributeSet attrs) {
+    public CustomGridView(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public IndexView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public CustomGridView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
