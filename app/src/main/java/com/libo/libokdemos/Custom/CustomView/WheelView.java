@@ -8,6 +8,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 /**
+ * http://blog.csdn.net/junzia/article/details/50979382
  * Created by libok on 2018-01-09.
  */
 

@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -13,9 +14,13 @@ import android.widget.SimpleAdapter;
 import com.libo.libokdemos.Utils.L;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 //slash斜线
 public class MainActivity extends AppCompatActivity {
@@ -97,11 +102,17 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * 当添加时判断是加在最后还是插入
+     * @param title
+     * @param intent
+     */
     public void addListItem(String title, Intent intent) {
         Map<String, Object> map = new HashMap<>();
         map.put("title", title);
         map.put("intent", intent);
         mList.add(map);
+        sortActivity();
     }
 
     /**
@@ -126,5 +137,17 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setClassName(packName, componentName);
         return intent;
+    }
+
+    /**
+     * compareTo排序方法
+     */
+    public void sortActivity() {
+        Collections.sort(mList, new Comparator<Map<String, Object>>() {
+            @Override
+            public int compare(Map<String, Object> o1, Map<String, Object> o2) {
+                return o1.get("title").toString().compareTo(o2.get("title").toString());
+            }
+        });
     }
 }

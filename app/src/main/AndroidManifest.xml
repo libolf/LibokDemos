@@ -3,6 +3,8 @@
     package="com.libo.libokdemos">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +15,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
             android:name=".MainActivity"
-            android:label="Main">
+            android:label="@string/main_label">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +25,7 @@
         </activity>
         <activity
             android:name=".Basis.BasisActivity"
-            android:label="123"
+            android:label="@string/basis_activity_label"
             android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,7 +36,7 @@
         </activity>
         <activity
             android:name=".Basis.ServiceActivity"
-            android:label="Basis/Activity/ServiceActivity">
+            android:label="Service">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -44,7 +46,7 @@
         </activity>
         <activity
             android:name=".Basis.ContentProviderActivity"
-            android:label="Basis/Activity/ContentProviderActivity">
+            android:label="@string/basis_provider_label">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -54,7 +56,7 @@
         </activity>
         <activity
             android:name=".Basis.BroadcastReceiverActivity"
-            android:label="Basis/Activity/BroadcaseReceiverActivity">
+            android:label="@string/basis_receiver_label">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -64,7 +66,7 @@
         </activity>
         <activity
             android:name=".Custom.CustomActivity"
-            android:label="Custom/CustomView/Loading1"
+            android:label="@string/custom_view_loading_label"
             android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -76,13 +78,13 @@
         <activity android:name=".Basis.Basis2Activity" />
 
         <service
-            android:name=".Basis.MyService"
+            android:name=".Basis.Service.MyService"
             android:enabled="true"
             android:exported="true" />
 
         <activity
             android:name=".Basis.MaterialDesignActivity"
-            android:label="MaterialDesign"
+            android:label="@string/basis_material_design_label"
             android:theme="@style/TransTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -93,6 +95,7 @@
         </activity>
         <activity
             android:name=".Basis.ScrollChangeActivity"
+            android:label="@string/basis_material_scroll_change_label"
             android:parentActivityName=".Basis.MaterialDesignActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -103,7 +106,7 @@
         </activity>
         <activity
             android:name=".MVP.View.MVPActivity"
-            android:label="mvp">
+            android:label="@string/design_pattern_mvp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -111,8 +114,9 @@
                 <category android:name="leedemos" />
             </intent-filter>
         </activity>
-        <activity android:name=".MVP.View.SelectPhoneActivity"
-            android:label="手机号归属地查询">
+        <activity
+            android:name=".MVP.View.SelectPhoneActivity"
+            android:label="@string/design_pattern_归属地">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -120,6 +124,14 @@
                 <category android:name="leedemos" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".Basis.Service.MyIntentService"
+            android:exported="false" />
+        <service
+            android:name=".Basis.Service.MyDownloadService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>
