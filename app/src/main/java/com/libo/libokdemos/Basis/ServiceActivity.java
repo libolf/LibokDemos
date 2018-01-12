@@ -48,19 +48,18 @@ public class ServiceActivity extends AppCompatActivity {
     @BindView(R.id.button_canceldownload_service)
     Button mButtonCanceldownloadService;
 
-//    private MyService.MyDownloadBinder mDownloadBinder;
-//    private ServiceConnection mServiceConnection = new ServiceConnection() {
-//        @Override
-//        public void onServiceConnected(ComponentName name, IBinder service) {
+    private ServiceConnection mServiceConnection1 = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
 //            mDownloadBinder = (MyService.MyDownloadBinder) service;
 //            mDownloadBinder.startDownload();
 //            mDownloadBinder.getProgress();
-//        }
-//
-//        @Override
-//        public void onServiceDisconnected(ComponentName name) {
-//        }
-//    };
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+        }
+    };
 
     private MyDownloadService.DownloadBinder mDownloadBinder;
     private ServiceConnection mServiceConnection = new ServiceConnection() {
@@ -87,6 +86,8 @@ public class ServiceActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(
                     this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
         }
+        DownloadAsyncTask downloadAsyncTask = new DownloadAsyncTask(this);
+        downloadAsyncTask.execute("123");
     }
 
     @OnClick({
@@ -108,10 +109,10 @@ public class ServiceActivity extends AppCompatActivity {
                 break;
             case R.id.button_bind_service:
                 Intent bindIntent = new Intent(this, MyService.class);
-//                bindService(bindIntent, mServiceConnection, BIND_AUTO_CREATE);
+                bindService(bindIntent, mServiceConnection1, BIND_AUTO_CREATE);
                 break;
             case R.id.button_unbind_service:
-//                unbindService(mServiceConnection);
+                unbindService(mServiceConnection1);
                 break;
             case R.id.button_intent_service:
                 Log.e(TAG, "onViewClicked: " + Thread.currentThread().getId());

@@ -2,6 +2,7 @@ package com.libo.libokdemos.Basis;
 
 import android.os.AsyncTask;
 import android.os.Environment;
+import android.util.Log;
 
 import com.libo.libokdemos.Basis.Implement.DownloadListener;
 
@@ -20,6 +21,7 @@ import okhttp3.Response;
 
 public class DownloadTask extends AsyncTask<String, Integer, Integer> {
 
+    private static final String TAG = "DownloadTask";
 
     public static final int TYPE_SUCCESS = 0;
     public static final int TYPE_FAILED = 1;
@@ -33,6 +35,11 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
 
     public DownloadTask(DownloadListener downloadListener) {
         mDownloadListener = downloadListener;
+    }
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
     }
 
     @Override
@@ -108,6 +115,7 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
     @Override
     protected void onProgressUpdate(Integer... values) {
         int progress = values[0];
+        Log.e(TAG, "onProgressUpdate: " + progress);
         if (progress > lastProgress) {
             mDownloadListener.onProgress(progress);
             lastProgress = progress;
