@@ -96,12 +96,8 @@ public class DownloadAsyncTask extends AsyncTask<String, Integer, Integer> {
         mProgressDialog.setProgress(values[0]);
         float alreayDownlaod = (total * (values[0] / 100f));
         if (total != -1) {
-            DecimalFormat df = new DecimalFormat("#.00");
             float f = total / 1024f / 1024f;
-            Log.e(TAG, "onProgressUpdate: " + df.format(3.146) + " " + df.format(f));
-            BigDecimal b = new BigDecimal(f);
-            f = b.setScale(2, BigDecimal.ROUND_HALF_UP).floatValue();
-            mProgressDialog.setProgressNumberFormat(alreayDownlaod + "M/" + f + "M");
+            mProgressDialog.setProgressNumberFormat(alreayDownlaod + "M/" + roundFloat(f) + "M");
         }
     }
 
@@ -113,5 +109,13 @@ public class DownloadAsyncTask extends AsyncTask<String, Integer, Integer> {
 //        mProgressDialog.getButton(ProgressDialog.BUTTON_POSITIVE).setEnabled(true);
         mProgressDialog.setTitle("下载完成");
         mProgressDialog.getButton(ProgressDialog.BUTTON_POSITIVE).setText("确定");
+    }
+
+    private float roundFloat(float value, int length) {
+        return Math.round(value * (Math.pow(10, length))) / (float)Math.pow(10, length);
+    }
+
+    private float roundFloat(float value) {
+        return Math.round(value * 100) / 100f;
     }
 }
