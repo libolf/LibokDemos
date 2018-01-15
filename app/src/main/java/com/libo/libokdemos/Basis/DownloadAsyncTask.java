@@ -26,9 +26,11 @@ import okhttp3.Response;
  */
 
 public class DownloadAsyncTask extends AsyncTask<String, Integer, Integer> {
-
+    
     private static final String TAG = "DownloadAsyncTask";
     private static final String download_url = "http://ucan.25pp.com/Wandoujia_web_seo_baidu_homepage.apk";
+
+    private static final int DOWNLOAD_SUCCESS = 0;
 
     private Context mContext;
     private ProgressDialog mProgressDialog;
@@ -97,6 +99,7 @@ public class DownloadAsyncTask extends AsyncTask<String, Integer, Integer> {
 //                    Toast.makeText(mContext, "已经下载完成", Toast.LENGTH_SHORT).show();
                     Log.e(TAG, "doInBackground: 已经下载完成");
                     publishProgress(100);
+                    return DOWNLOAD_SUCCESS;
                 } else {
                     downloadLength = file.length();
                     inputStream = response.body().byteStream();
@@ -153,8 +156,13 @@ public class DownloadAsyncTask extends AsyncTask<String, Integer, Integer> {
         Log.e(TAG, "onPostExecute: ");
 //        mProgressDialog.dismiss();
 //        mProgressDialog.getButton(ProgressDialog.BUTTON_POSITIVE).setEnabled(true);
-        mProgressDialog.setTitle("下载完成");
-        mProgressDialog.getButton(ProgressDialog.BUTTON_POSITIVE).setText("确定");
+        switch (integer) {
+            case DOWNLOAD_SUCCESS:
+                Toast.makeText(mContext, "下载完成", Toast.LENGTH_SHORT).show();
+                mProgressDialog.setTitle("下载完成");
+                mProgressDialog.getButton(ProgressDialog.BUTTON_POSITIVE).setText("确定");
+                break;
+        }
     }
 
     private float roundFloat(float value, int length) {
