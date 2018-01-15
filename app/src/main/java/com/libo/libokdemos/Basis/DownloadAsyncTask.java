@@ -4,10 +4,15 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
+import android.os.Environment;
 import android.util.Log;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Toast;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.RandomAccessFile;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
@@ -75,15 +80,55 @@ public class DownloadAsyncTask extends AsyncTask<String, Integer, Integer> {
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
+        RandomAccessFile downloadFile = null;
+        String fileName = download_url.substring(download_url.lastIndexOf("/"));
+        String downloadPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();
+        long downloadLength = 0;
+        File file = new File(downloadPath + fileName);
+        InputStream inputStream = null;
+
         try {
             Response response = mOkHttpClient.newCall(mRequest).execute();
             if (response.isSuccessful()) {
                 total = response.body().contentLength();
                 Log.e(TAG, "doInBackground: " + total);
                 publishProgress(0);
+                if (file.exists() && file.length() == total) {
+//                    Toast.makeText(mContext, "已经下载完成", Toast.LENGTH_SHORT).show();
+                    Log.e(TAG, "doInBackground: 已经下载完成");
+                    publishProgress(100);
+                } else {
+                    downloadLength = file.length();
+                    inputStream = response.body().byteStream();
+                    downloadFile = new RandomAccessFile(file, "rw");
+                    downloadFile.seek(downloadLength);
+                    byte[] buffer = new byte[1024];
+                    int len = 0;
+                    int sum = 0;
+                    while ((len = inputStream.read(buffer)) != -1) {
+                        Log.e(TAG, "doInBackground: len = " + len);
+                        downloadFile.write(buffer, 0, len);
+                        sum += len;
+                        int progress = (int) (sum * 100 / total);
+                        publishProgress(progress);
+                    }
+                    response.body().close();
+                }
             }
+
         } catch (IOException e) {
             e.printStackTrace();
+        }finally {
+                try {
+                    if (inputStream != null) {
+                        inputStream.close();
+                    }
+                    if (downloadFile != null) {
+                        downloadFile.close();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
         }
         Log.e(TAG, "doInBackground: ");
         return null;
@@ -97,7 +142,8 @@ public class DownloadAsyncTask extends AsyncTask<String, Integer, Integer> {
         float alreayDownlaod = (total * (values[0] / 100f));
         if (total != -1) {
             float f = total / 1024f / 1024f;
-            mProgressDialog.setProgressNumberFormat(alreayDownlaod + "M/" + roundFloat(f) + "M");
+            alreayDownlaod = alreayDownlaod / 1024f / 1024f;
+            mProgressDialog.setProgressNumberFormat(roundFloat(alreayDownlaod) + "M/" + roundFloat(f) + "M");
         }
     }
 
