@@ -42,6 +42,7 @@ public class MyService extends Service {
                 .setContentIntent(pendingIntent)
                 .build();
         startForeground(1, notification);
+        stopSelf();
     }
 
     @Override

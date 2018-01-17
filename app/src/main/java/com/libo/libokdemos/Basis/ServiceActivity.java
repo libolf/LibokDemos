@@ -86,8 +86,8 @@ public class ServiceActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(
                     this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
         }
-        DownloadAsyncTask downloadAsyncTask = new DownloadAsyncTask(this);
-        downloadAsyncTask.execute("123");
+//        DownloadAsyncTask downloadAsyncTask = new DownloadAsyncTask(this);
+//        downloadAsyncTask.execute("123");
     }
 
     @OnClick({
