@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
@@ -22,7 +21,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.libo.libokdemos.R;
-import com.libo.libokdemos.Utils.AlertDialogUtil;
 import com.libo.libokdemos.Utils.PermissionsUtil;
 
 import java.util.ArrayList;
