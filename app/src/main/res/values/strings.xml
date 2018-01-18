@@ -6,7 +6,7 @@
     <string name="navigation_drawer_close">Close</string>
 
     <string name="action_settings">Settings</string>
-    <string name="main_label">Main</string>
+    <string name="main_label">OkDemos</string>
     <string name="basis_activity_label">Basis/Activity/BasisActivity</string>
     <string name="basis_service_label">Basis/Service/ServiceActivity</string>
     <string name="basis_provider_label">Basis/Provider/ContentProviderActivity</string>
