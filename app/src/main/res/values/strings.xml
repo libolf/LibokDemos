@@ -13,7 +13,7 @@
     <string name="basis_receiver_label">Basis/Receiver/BroadcaseReceiverActivity</string>
     <string name="basis_material_design_label">Basis/MaterialDesign/MaterialDesignActivity</string>
     <string name="basis_material_scroll_change_label">Basis/MaterialDesign/ScrollChangeActivity</string>
-    <string name="custom_view_loading_label">Custom/CustomView/Loading</string>
+    <string name="custom_view_loading_label">Custom/CustomView</string>
     <string name="design_pattern_mvp">DesignPattern/MVP</string>
     <string name="design_pattern_归属地">DesignPattern/手机号归属地查询</string>
 </resources>
