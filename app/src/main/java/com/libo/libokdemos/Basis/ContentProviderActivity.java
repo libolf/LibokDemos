@@ -51,13 +51,10 @@ public class ContentProviderActivity extends AppCompatActivity implements Permis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_content_provider);
         ButterKnife.bind(this);
-//        PermissionsUtil.request(this, "温馨提示", "此权限必须申请将会在XXX处使用\n\n\n请在接下来允许权限的申请", 1, this, new String[]{Manifest.permission.CALL_PHONE});
+        PermissionsUtil.request(this, "温馨提示", "此权限必须申请将会在XXX处使用\n\n\n请在接下来允许权限的申请", 520, this, new String[]{Manifest.permission.CALL_PHONE, Manifest.permission.CAMERA});
         mDatas = new ArrayList<>();
         mAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, mDatas);
         mListview.setAdapter(mAdapter);
-        Toast toast = Toast.makeText(this, "居中ᕙ▐° ◯ °▐ᕗ", Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.CENTER, 0, 0);
-        toast.show();
     }
 
     @OnClick({R.id.permission, R.id.content_provider})
@@ -114,11 +111,21 @@ public class ContentProviderActivity extends AppCompatActivity implements Permis
                     Toast.makeText(this, "权限申请拒绝1", Toast.LENGTH_SHORT).show();
                 }
                 break;
+            case 520:
+                if (grantResults.length > 0) {
+                    for (int i = 0; i < grantResults.length; i++) {
+                        if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
+                            Toast.makeText(this, permissions[i] + " 请求成功", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+                break;
         }
     }
 
     @Override
-    public void showRationale() {
-        Toast.makeText(this, "showRationale", Toast.LENGTH_SHORT).show();
+    public void doEverything() {
+        Toast.makeText(this, "doEverything", Toast.LENGTH_SHORT).show();
+        Log.e(TAG, "doEverything: ");
     }
 }

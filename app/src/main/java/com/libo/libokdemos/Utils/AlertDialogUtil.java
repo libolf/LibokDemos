@@ -15,11 +15,11 @@ import java.lang.reflect.Field;
 
 public class AlertDialogUtil {
 
-    public static void showDialog(final Context context, String title, String message, OnClickListener positiveListener, OnClickListener negativeListener) {
-        showDialog(context, title, -1, -1, message, -1, -1, "了然", positiveListener,"不明",  negativeListener);
+    public static AlertDialog showDialog(final Context context, String title, String message, OnClickListener positiveListener, OnClickListener negativeListener) {
+        return showDialog(context, title, -1, -1, message, -1, -1, "了然", positiveListener,"不明",  negativeListener);
     }
 
-    public static void showDialog(final Context context, String title, int titleColor, float titleSize, String message, int messageColor, float messageSize, String positiveText, final OnClickListener positiveListener, String negativeText, final OnClickListener negativeListener) {
+    public static AlertDialog showDialog(final Context context, String title, int titleColor, float titleSize, String message, int messageColor, float messageSize, String positiveText, final OnClickListener positiveListener, String negativeText, final OnClickListener negativeListener) {
         AlertDialog alertDialog = new AlertDialog.Builder(context)
                 .setTitle(title)
                 .setMessage(message)
@@ -42,7 +42,6 @@ public class AlertDialogUtil {
         alertDialog.setCancelable(false);
         alertDialog.show();
         if (titleColor == -1 && titleSize == -1 && messageColor == -1 && messageSize == -1) {
-            return;
         } else {
             try {
                 Field mAlert = AlertDialog.class.getDeclaredField("mAlert");
@@ -70,7 +69,7 @@ public class AlertDialogUtil {
                 e.printStackTrace();
             }
         }
-
+        return alertDialog;
     }
 
     public interface OnClickListener {
