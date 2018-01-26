@@ -83,7 +83,7 @@ public class TestView extends View {
 
         mHandler = new Handler();
 
-        mNumber = 5;
+        mNumber = 2;
 
         mAngle = new Angle(270, 360);
 //        currentAngle = new Angle(270, 360);
@@ -178,7 +178,7 @@ public class TestView extends View {
             }
         });
         animator.setInterpolator(new DecelerateInterpolator());
-        animator.setDuration(1000);
+        animator.setDuration(2000);
         Log.e(TAG, "startMyAnimation: " + animator.getDuration());
         animator.start();
         try {
