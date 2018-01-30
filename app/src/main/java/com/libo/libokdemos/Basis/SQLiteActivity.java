@@ -8,6 +8,9 @@ import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.CursorAdapter;
 import android.support.v7.app.AppCompatActivity;
+import android.util.ArrayMap;
+import android.util.Log;
+import android.util.SparseArray;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.Button;
@@ -21,10 +24,9 @@ import com.libo.libokdemos.Utils.MyBaseAdapter;
 import com.libo.libokdemos.Utils.MyCursorAdapter;
 import com.libo.libokdemos.Utils.MySQLiteHelper;
 
-import org.reactivestreams.Subscriber;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,7 +35,6 @@ import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
@@ -44,10 +45,16 @@ import io.reactivex.schedulers.Schedulers;
 
 public class SQLiteActivity extends AppCompatActivity {
 
+    private static final String TAG = "SQLiteActivity";
+
     @BindView(R.id.create_database)
     Button mCreateDatabase;
     @BindView(R.id.list_database)
     ListView mDatabaseListView;
+    @BindView(R.id.create_database1)
+    Button mCreateDatabase1;
+    @BindView(R.id.create_database2)
+    Button mCreateDatabase2;
 
     private MySQLiteHelper mSQLiteHelper;
     private SQLiteDatabase mDatabase;
@@ -60,6 +67,9 @@ public class SQLiteActivity extends AppCompatActivity {
     private boolean isDivPage;
     private Person loadingPerson;
     private Person loadingTextPerson;
+
+    private int[][] intMatrix = new int[20][300];
+    private Random mRandom = new Random();
 
     private Handler mHandler = new Handler() {
         @Override
@@ -156,10 +166,40 @@ public class SQLiteActivity extends AppCompatActivity {
             }
         });
 
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 300; j++) {
+                intMatrix[i][j] = mRandom.nextInt();
+            }
+        }
+
     }
 
     @OnClick(R.id.create_database)
     public void onViewClicked() {
+        String rowString = "";
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 300; j++) {
+                rowString += intMatrix[i][j];
+                rowString += ",";
+            }
+            Log.e(TAG, "onViewClicked: row = " + i);
+        }
+        Log.e(TAG, "onViewClicked: row length = " + rowString.length());
+
+//        ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+//        int memclass = activityManager.getMemoryClass();
+//        int largeMemoryClass = activityManager.getLargeMemoryClass();
+//
+//        float totalMemory = Runtime.getRuntime().totalMemory() * 1.0f / (1024 * 1024);
+//        float freeMemory = Runtime.getRuntime().freeMemory() * 1.0f / (1024 * 1024);
+//        float maxMemory = Runtime.getRuntime().maxMemory() * 1.0f / (1024 * 1024);
+
+//        Log.e(TAG, "onViewClicked: " +
+//                "mem = " + memclass +
+//                " large = " +largeMemoryClass +
+//                " total = " + totalMemory +
+//                " free = " + freeMemory +
+//                " max = " + maxMemory);
 
         //SQLiteDatabase database = mSQLiteHelper.getWritableDatabase();
 //        String insertSql = null;
@@ -170,5 +210,33 @@ public class SQLiteActivity extends AppCompatActivity {
 //        }
 //        mDatabase.setTransactionSuccessful();
 //        mDatabase.endTransaction();
+    }
+
+    @OnClick({R.id.create_database1, R.id.create_database2})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.create_database1:
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < 20; i++) {
+                    for (int j = 0; j < 300; j++) {
+                        builder.append(intMatrix[i][j]);
+                        builder.append(",");
+                    }
+                    Log.e(TAG, "onViewClicked: row1 = " + i);
+                }
+                Log.e(TAG, "onViewClicked: row length1 = " + builder.toString().length());
+                break;
+            case R.id.create_database2:
+                StringBuffer buffer = new StringBuffer();
+                for (int i = 0; i < 20; i++) {
+                    for (int j = 0; j < 300; j++) {
+                        buffer.append(intMatrix[i][j]);
+                        buffer.append(",");
+                    }
+                    Log.e(TAG, "onViewClicked: row1 = " + i);
+                }
+                Log.e(TAG, "onViewClicked: row length1 = " + buffer.toString().length());
+                break;
+        }
     }
 }
