@@ -20,7 +20,8 @@ public class MyBaseAdapter extends BaseAdapter {
 
     private static final int TYPE_CONTENT = 0;
     private static final int TYPE_LOADING = 1;
-    private static final int TYPE_COUNT = 2;
+    private static final int TYPE_LOADING_TEXT = 2;
+    private static final int TYPE_COUNT = 3;
 
     private List<Person> mDatas;
     private Context mContext;
@@ -49,6 +50,8 @@ public class MyBaseAdapter extends BaseAdapter {
     public int getItemViewType(int position) {
         if (mDatas.get(position).getId() == -1) {
             return TYPE_LOADING;
+        } else if (mDatas.get(position).getId() == -2) {
+            return TYPE_LOADING_TEXT;
         } else {
             return TYPE_CONTENT;
         }
@@ -84,6 +87,10 @@ public class MyBaseAdapter extends BaseAdapter {
         } else if (getItemViewType(position) == TYPE_LOADING) {
             if (convertView == null) {
                 convertView = LayoutInflater.from(mContext).inflate(R.layout.sqlite_list_loading_item, null);
+            }
+        } else if (getItemViewType(position) == TYPE_LOADING_TEXT) {
+            if (convertView == null) {
+                convertView = LayoutInflater.from(mContext).inflate(R.layout.sqlite_list_loading_text_item, null);
             }
         }
         return convertView;

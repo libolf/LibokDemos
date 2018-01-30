@@ -60,4 +60,13 @@ public class DBManager {
         }
         return -1;
     }
+
+//    public static <T> List<T> cursorToList1(Cursor cursor) {
+//
+//    }
+//
+//    public static <T> List<T> getDatas(SQLiteDatabase database, String selectSql, int currentPage, int size) {
+//        Cursor cursor = database.rawQuery(selectSql, new String[]{currentPage + "", size + ""});
+//        return cursorToList1(cursor);
+//    }
 }
