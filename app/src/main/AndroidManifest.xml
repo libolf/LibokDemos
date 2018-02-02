@@ -159,7 +159,8 @@
                 <category android:name="leedemos" />
             </intent-filter>
         </activity>
-        <activity android:name=".Basis.DrawerActivity"
+        <activity
+            android:name=".Basis.MaterialDesignActivity1"
             android:label="material design1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -168,6 +169,21 @@
                 <category android:name="leedemos" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Project.Download.DownloadActivity"
+            android:label="Download">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="leedemos" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".Project.Download.DownloadService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

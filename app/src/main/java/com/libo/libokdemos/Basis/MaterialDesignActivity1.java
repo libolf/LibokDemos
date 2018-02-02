@@ -31,12 +31,12 @@ import com.libo.libokdemos.R;
  * https://www.jianshu.com/p/33d33d6e80a3
  */
 
-public class DrawerActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MaterialDesignActivity1 extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private static final String TAG = "DrawerActivity";
+    private static final String TAG = "MaterialDesignActivity1";
 
     public static Intent newIntent(Context context) {
-        return new Intent(context, DrawerActivity.class);
+        return new Intent(context, MaterialDesignActivity1.class);
     }
 
 
