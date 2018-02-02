@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
-    <!--危险权限-->
+    <!-- 危险权限 -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -91,7 +91,7 @@
 
         <activity
             android:name=".Basis.MaterialDesignActivity"
-            android:label="@string/basis_material_design_label"
+            android:label="material design"
             android:theme="@style/TransTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -149,8 +149,18 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".Basis.SQLiteActivity"
+        <activity
+            android:name=".Basis.SQLiteActivity"
             android:label="SQLite">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="leedemos" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Basis.DrawerActivity"
+            android:label="material design1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

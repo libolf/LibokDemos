@@ -2,6 +2,7 @@ package com.libo.libokdemos.Basis;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.BitmapRegionDecoder;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -235,6 +236,7 @@ public class SQLiteActivity extends AppCompatActivity {
                     }
                     Log.e(TAG, "onViewClicked: row1 = " + i);
                 }
+//                BitmapRegionDecoder
                 Log.e(TAG, "onViewClicked: row length1 = " + buffer.toString().length());
                 break;
         }
