@@ -14,6 +14,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -44,7 +45,7 @@ public class MaterialDesignActivity1 extends AppCompatActivity implements Naviga
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer);
-        immersionBar(ContextCompat.getColor(this, R.color.colorPrimaryDark));
+        immersionBar(ContextCompat.getColor(this, R.color.colorAccent));
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -88,7 +89,7 @@ public class MaterialDesignActivity1 extends AppCompatActivity implements Naviga
                             | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
             decorView.setSystemUiVisibility(option);
 //            window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-//            decorView.addView(createBarView(getStatusBarHeight(), color, Gravity.TOP), 0);
+            decorView.addView(createBarView(getStatusBarHeight(), color, Gravity.TOP), 0);
 //            decorView.addView(createBarView(getNavigationBarHeight(), color, Gravity.BOTTOM), 1);
         }
     }

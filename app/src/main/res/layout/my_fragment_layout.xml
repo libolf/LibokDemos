@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_relative"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/image_gray">
+
+    <TextView
+        android:id="@+id/fragment_text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:text="天气"
+        android:textSize="56sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/fragment_text_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_text_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="V1.0"
+        android:textSize="36sp" />
+
+    <ImageView
+        android:id="@+id/fragment_image_logo"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_below="@id/fragment_text_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/image1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Bottom"
+        android:textSize="24sp"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

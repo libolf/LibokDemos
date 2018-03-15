@@ -87,6 +87,7 @@ public class TestView extends View {
 
         mAngle = new Angle(270, 360);
 //        currentAngle = new Angle(270, 360);
+        Log.e(TAG, "TestView: " + "111111111111");
     }
 
     public void setNumber(int number) {
@@ -209,5 +210,7 @@ public class TestView extends View {
         mArcRectF.top = mCenterY - 200;
         mArcRectF.right = mCenterX + 200;
         mArcRectF.bottom = mCenterY + 200;
+
+        Log.e(TAG, "onSizeChanged: " + "22222222222222");
     }
 }

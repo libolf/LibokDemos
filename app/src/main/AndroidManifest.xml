@@ -73,7 +73,7 @@
         </activity>
         <activity
             android:name=".Custom.CustomActivity"
-            android:label="@string/custom_view_loading_label"
+            android:label="CustomActivity"
             android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -91,7 +91,7 @@
 
         <activity
             android:name=".Basis.MaterialDesignActivity"
-            android:label="material design"
+            android:label="Basis/MaterialDesign/material design"
             android:theme="@style/TransTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -161,7 +161,7 @@
         </activity>
         <activity
             android:name=".Basis.MaterialDesignActivity1"
-            android:label="material design1">
+            android:label="Basis/MaterialDesign/material design1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -169,9 +169,10 @@
                 <category android:name="leedemos" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".Project.Download.DownloadActivity"
-            android:label="Download">
+            android:label="Project/Download">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -183,7 +184,97 @@
         <service
             android:name=".Project.Download.DownloadService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
+
+        <activity
+            android:name=".RxJava.RxActivity"
+            android:label="Rx/RxActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="leedemos" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".RxJava.RxBindingActivity"
+            android:label="Rx/RxBinding">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="leedemos" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".RxJava.RxAndroidActivity"
+            android:label="Rx/RxAndroid">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="leedemos" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Advanced.StartActivity"
+            android:label="Advanced/Start">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="leedemos" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Advanced.FlipperGuideActivity"
+            android:label="Advanced/FlipperGuide">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="leedemos" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".BaseActivity" />
+
+        <activity
+            android:name=".Animation.EditAnimationActivity"
+            android:label="Animation/EditText">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="leedemos" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Advanced.ViewPagerGuideActivity"
+            android:label="Advanced/ViewPagerGuide">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="leedemos" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Custom.CustomViewPager.ViewPagerTransformActivity"
+            android:label="Custom/ViewPagerTransform">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+                <category android:name="leedemos" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

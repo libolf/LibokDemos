@@ -106,7 +106,7 @@ public class DownloadService extends Service {
             }finally {
                 try {
                     connection.disconnect();
-                    accessFile.close();
+                     accessFile.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

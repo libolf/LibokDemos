@@ -5,27 +5,31 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import com.libo.libokdemos.Utils.L;
+import com.libo.libokdemos.Utils.Utils;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 //slash斜线
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
+    @BindView(R.id.main_toolbar)
+    Toolbar mMainToolbar;
 
     private ListView mListView;
     private List<Map<String, Object>> mList;
@@ -36,7 +40,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Utils.transparentNavigationAndStatusBar(this);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+
+        setSupportActionBar(mMainToolbar);
 
         mListView = findViewById(R.id.listview);
 
@@ -90,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        mListView.setAdapter(new SimpleAdapter(this, mList, android.R.layout.simple_list_item_1,  new String[]{"title"}, new int[]{android.R.id.text1}));
+        mListView.setAdapter(new SimpleAdapter(this, mList, android.R.layout.simple_list_item_1, new String[]{"title"}, new int[]{android.R.id.text1}));
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -104,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * 当添加时判断是加在最后还是插入
+     *
      * @param title
      * @param intent
      */
@@ -117,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * 没到最后一层需要继续前进
+     *
      * @param path
      * @return
      */
@@ -129,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * 最后一层具体的Intent
+     *
      * @param packName
      * @param componentName
      * @return
