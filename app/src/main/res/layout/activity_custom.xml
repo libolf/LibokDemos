@@ -1,18 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/relative"
-    android:clipChildren="false">
+    android:orientation="vertical">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewpager"
+    <include layout="@layout/toolbar_layout" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.libo.libokdemos.Custom.CustomView.SwitchButton
+        android:id="@+id/switch_button"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#11000000"
+        app:animation_interpolator="linear_interpolator"
+        app:animation_duration="2000"
+        app:circle_radius="12dp"
+        app:off_color="@color/white"
+        app:on_color="@android:color/holo_green_light"
+        app:sb_background_color="@color/image_gray"
+        app:stroke_color="@android:color/holo_blue_light"
+        app:stroke_width="2dp"
+        app:view_size="big"/>
+
+    <!--<LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">-->
+
+        <com.libo.libokdemos.Custom.CustomView.HeartView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_green_light"/>
+
+
+   <!-- </LinearLayout>-->
+
+    <Button
+        android:id="@+id/custom_button"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="改变样式"
+        android:background="#d3dee9"/>
+
+    <com.libo.libokdemos.Custom.CustomView.NewHeartView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_centerInParent="true"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"
-        android:clipChildren="false" />
+        android:layout_height="match_parent"
+        android:background="@color/image_gray"/>
+
+    <ListView
+        android:id="@+id/custom_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
 
     <!--<com.asha.ChromeLikeSwipeLayout
         android:id="@+id/chrome_refresh"
@@ -279,4 +326,4 @@
 
 
     <!--</com.libo.libokdemos.Custom.CustomView.RefreshLayout>-->
-</RelativeLayout>
+</LinearLayout>

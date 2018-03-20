@@ -48,7 +48,7 @@ public class ViewPagerTransformActivity extends AppCompatActivity {
 
     private static final String TAG = "ViewPagerTransformActiv";
 
-    @BindView(R.id.transform_toolbar)
+    @BindView(R.id.main_toolbar)
     Toolbar mTransformToolbar;
     @BindView(R.id.transform_viewpager)
     ViewPager mTransformViewpager;
@@ -77,11 +77,12 @@ public class ViewPagerTransformActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Utils.transparentNavigationAndStatusBar(this);
         setContentView(R.layout.activity_view_pager_transform);
         ButterKnife.bind(this);
+        Utils.transparentNavigationAndStatusBar(this, mTransformToolbar);
         setSupportActionBar(mTransformToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("ViewPagerTransform");
 
         prepareData();
         init();

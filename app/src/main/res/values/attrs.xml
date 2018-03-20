@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SwitchButton">
+
+        <attr name="sb_background_color" format="color" />
+        <attr name="on_color" format="color" />
+        <attr name="off_color" format="color" />
+        <attr name="stroke_color" format="color" />
+        <attr name="stroke_width" format="dimension" />
+        <attr name="circle_radius" format="dimension" />
+        <attr name="animation_duration" format="integer" />
+        <attr name="animation_interpolator" format="enum">
+            <enum name="accelerate_interpolator" value="0" />
+            <enum name="linear_interpolator" value="1" />
+            <enum name="accelerate_decelerate_interpolator" value="2" />
+            <enum name="anticipate_interpolator" value="3" />
+            <enum name="anticipate_overshoot_interpolator" value="4" />
+            <enum name="bounce_interpolator" value="5" />
+            <enum name="decelerate_interpolator" value="6" />
+            <enum name="overshoot_interpolator" value="7" />
+        </attr>
+        <attr name="view_size" format="enum">
+
+            <enum name="small" value="0" />
+            <enum name="normal" value="1" />
+            <enum name="big" value="2" />
+
+        </attr>
+    </declare-styleable>
+</resources>

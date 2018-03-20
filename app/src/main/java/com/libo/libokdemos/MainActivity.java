@@ -28,11 +28,12 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
+
+    public List<Map<String, Object>> mList;
     @BindView(R.id.main_toolbar)
     Toolbar mMainToolbar;
-
-    private ListView mListView;
-    private List<Map<String, Object>> mList;
+    @BindView(R.id.listview)
+    ListView mListView;
     private PackageManager mPackageManager;
     private List<ResolveInfo> mResolveInfos;
     private List<String> mStringList;
@@ -40,13 +41,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Utils.transparentNavigationAndStatusBar(this);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
-        setSupportActionBar(mMainToolbar);
+        Utils.transparentNavigationAndStatusBar(this, mMainToolbar);
 
         mListView = findViewById(R.id.listview);
+
+        setSupportActionBar(mMainToolbar);
+        if (mMainToolbar != null) {
+            getSupportActionBar().setTitle("Demos");
+        }
+
 
         Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
         mainIntent.addCategory(Intent.CATEGORY_SAMPLE_CODE);
@@ -160,5 +165,15 @@ public class MainActivity extends AppCompatActivity {
                 return o1.get("title").toString().compareTo(o2.get("title").toString());
             }
         });
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+//        Log.e(TAG, "onWindowFocusChanged: " + mMainToolbar.getHeight());
+//        int paddingTop = mMainToolbar.getPaddingTop();
+//        int paddingBottom = mMainToolbar.getPaddingBottom();
+//        Log.e(TAG, "onCreate: " + paddingTop + " " + paddingBottom);
+//        mMainToolbar.setPadding(0, paddingTop, 0, 0);
     }
 }

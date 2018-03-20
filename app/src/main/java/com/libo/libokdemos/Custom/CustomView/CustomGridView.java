@@ -9,10 +9,11 @@ import android.view.View;
 import android.widget.GridView;
 
 /**
- * 自定义GridView选择样式
- * Created by libok on 2018-01-11.
+ * @author 李波
+ * @date 2018-03-15 下午 07:19
+ * @e-mail libolf@outlook.com
+ * @description 自定义GridView
  */
-
 public class CustomGridView extends GridView {
 
     private int mWidth;

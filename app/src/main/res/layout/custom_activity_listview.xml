@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/custom_listview_item_text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textSize="42sp" />
+
+    <com.libo.libokdemos.Custom.CustomView.SwitchButton
+        android:id="@+id/custom_listview_item_switch"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="16dp" />
+
+    <Switch
+        android:id="@+id/custom_listview_item_switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="16dp"
+        android:layout_toLeftOf="@id/custom_listview_item_switch" />
+
+    <com.libo.libokdemos.Custom.CustomView.HeartView
+        android:id="@+id/custom_listview_item_heart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="16dp"
+        android:layout_toLeftOf="@id/custom_listview_item_switch1"/>
+
+    <com.libo.libokdemos.Custom.CustomView.CustomTextView
+        android:id="@+id/custom_listview_item_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="16dp"
+        android:layout_toLeftOf="@id/custom_listview_item_heart"/>
+
+</RelativeLayout>
